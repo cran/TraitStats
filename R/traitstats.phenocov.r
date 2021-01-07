@@ -495,7 +495,7 @@ traitstats.phenocov<-function(Treatment,Replication,DataFile)
       PV[i,j]<-pv
     }
   }
-  PhenoCov<-GV
+  PhenoCov<-PV
   PhenoCov
   return(PhenoCov)
 }

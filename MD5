@@ -1,4 +1,4 @@
-41cd4bb93e835710784b45785c08d9d8 *DESCRIPTION
+6f8258bf1a40828350e82adc82782973 *DESCRIPTION
 802494cc2667e942161c3a9d2d86617a *NAMESPACE
 4e55111f6ccf103d10f9927f8ca2dde2 *R/traitstats.envcorl.r
 d47142b77eee07748a6275a755a00c17 *R/traitstats.envcov.r
@@ -6,11 +6,11 @@ d47142b77eee07748a6275a755a00c17 *R/traitstats.envcov.r
 7317dbb270135fd660abf62cf689cc79 *R/traitstats.genocov.r
 d5dae2cb874fd58a7b301d151afe3786 *R/traitstats.genpar.r
 0729c78bf1a0262b6d041f554eea3658 *R/traitstats.phenocorl.r
-f43fc8f88b8bb0f784460b35b79b93f2 *R/traitstats.phenocov.r
+b9e17c250e2ac72378195fe8026d3437 *R/traitstats.phenocov.r
 72d500fe845c6375b84609837962e6a9 *R/traitstats.rbd.r
 431dd8806152bbdc36610382b60828b4 *R/traitstats.rbdmeantable.r
 eed9755fe085abdc162b4ee277a66f5d *R/traitstats.rbdstats.r
-8201691935ca7b2b92892ae8b28be790 *R/traitstats.rbdsummary.r
+8a74ef3623a06ec01fdc0a2067413e7f *R/traitstats.rbdsummary.r
 4250f0bd28571b72e569eed6b3850779 *data/Barley.rda
 2d48c50e69feee3894e5dedc7dde58bf *man/Barley.Rd
 6efb37d992e2f01d954fdaf4a7e5254b *man/traitstatsenvcorl.Rd

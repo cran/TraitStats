@@ -3,27 +3,27 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
   df_dataset<-DataFile
   treatment<-as.factor(Treatment)
   replication<-as.factor(Replication)
-  
+
   colnms<-colnames(df_dataset)
   colcount=length(colnms)
   colrangestart=3
-  
+
   t=length(levels(treatment))
   r=length(levels(replication))
-  
+
   tlevels=levels(treatment)
   rlevels=levels(replication)
-  
+
   TFT95<-qf(0.95,(t-1),(r-1)*(t-1))
   TFT99<-qf(0.99,(t-1),(r-1)*(t-1))
   TFT99.99<-qf(0.999,(t-1),(r-1)*(t-1))
-  
+
   TFR95<-qf(0.95,(r-1),(r-1)*(t-1))
   TFR99<-qf(0.99,(r-1),(r-1)*(t-1))
   TFR99.99<-qf(0.999,(r-1),(r-1)*(t-1))
-  
+
   TINV<-abs(qt(0.05/2,(r-1)*(t-1)))
-  
+
   sumvector<-c()
   for (val in 3:colcount)
   {
@@ -64,13 +64,13 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
         RTS[i,j]<-valTS
         RTS[j,i]<-valTS
       }
-      
+
     }
   }
   totvals=t*r
   rtss<-c()
   i=colrangestart
-  while(i<=colcount) 
+  while(i<=colcount)
   {
     fsum<-c()
     for(k in 1:totvals)
@@ -84,7 +84,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     tss=sum(as.numeric(fsum))
     rtss <-c(rtss,tss)
     tempi=i
-    while(tempi<=colcount) 
+    while(tempi<=colcount)
     {
       fsum<-c()
       for(k in 1:totvals)
@@ -97,7 +97,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
       }
       tempi=tempi+1
       TSS=sum(fsum)
-      
+
       rtss <-c(rtss,TSS)
     }
     i=i+1
@@ -123,7 +123,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     {
       if(rtss[countchar]==0)
         countchar=countchar+1
-      
+
       {
         val=rtss[countchar]
         RTSS[i,j]<-val
@@ -156,7 +156,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     colnames <- c(colnames,colnms[i+2])
   }
   RRSS1 <- matrix( nrow = r,ncol = matrow, byrow = TRUE, dimnames = list(rownames, colnames))
-  
+
   incrementor=1
   cc=colcount-2
   for(i in 1:cc)
@@ -251,10 +251,10 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     colnames <- c(colnames,colnms[i+2])
   }
   RTrSS <- matrix( nrow = matrow,ncol = matrow, byrow = TRUE, dimnames = list(rownames, colnames))
-  
+
   tempvar=colcount-2
   temprc=length(tlevels)
-  
+
   for(i in 1:tempvar)
   {
     varstart=i
@@ -266,7 +266,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
         for(k in 1:temprc)
         {
           valTS= valTS+(RTSS1[k,i]*RTSS1[k,i])
-          
+
         }
         RTrSS[i,j]<-valTS
       }
@@ -276,12 +276,12 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
         for(k in 1:temprc)
         {
           valTS= valTS+(RTSS1[k,j]*RTSS1[k,i])
-          
+
         }
         RTrSS[i,j]<-valTS
         RTrSS[j,i]<-valTS
       }
-      
+
     }
   }
   matrow=colcount-2
@@ -769,7 +769,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
   }
   GCV <- matrix( nrow = matrow,ncol = matrow, byrow = TRUE, dimnames = list(rownames, colnames))
   gcv<-c()
-  
+
   for(i in 1:i)
   {
     C<-sqrt(GV[i,i])
@@ -826,7 +826,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
   }
   PCV <- matrix( nrow = matrow,ncol = matrow, byrow = TRUE, dimnames = list(rownames, colnames))
   pcv<-c()
-  
+
   for(i in 1:i)
   {
     C<-sqrt(PV[i,i])
@@ -1043,7 +1043,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
   }
   rownames<-c("GCV","PCV","h2","GA","GAM")
   colnames<-c()
-  
+
   for(i in 1:matrow)
   {
     colnames <- c(colnames,colnms[i+2])
@@ -1063,7 +1063,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
   GenPar<-noquote(GenPar)
   rownames<-c("Rep","Trt","MStrt","MSrep","MSerror")
   colnames<-c()
-  
+
   for(i in 1:matrow)
   {
     colnames <- c(colnames,colnms[i+2])
@@ -1074,7 +1074,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
   {
     for(j in 1:j)
     {
-      
+
       tANOVA[1,j]<-r
       tANOVA[2,j]<-t
       tANOVA[3,j]<-paste(round(TrMSS[j,j],digits = 4),TSIGN[j,j])
@@ -1103,7 +1103,7 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     }
   }
   tStatsTable
-  
+
   datarows<-nrow(df_dataset)
   length(colnames)
   dataepr<-c()
@@ -1128,13 +1128,13 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     plotanova <- tableGrob(tANOVA[tastart:taend],rows=rownames(tANOVA))
     plotstats <- tableGrob(tStatsTable[tstatstart:tstatend],rows=rownames(tStatsTable))
     plotgenpar <- tableGrob(GenPar[tastart:taend],rows=rownames(GenPar))
-    
+
     gp1<-grid.arrange(plotter,ncol=1,nrow=1)
     gp2<-grid.arrange(plotanova,plotstats,ncol=2,nrow=1)
     gp3<-grid.arrange(plotgenpar,ncol=1,nrow=1)
     gp23<-grid.arrange(gp2,gp3,ncol=1,nrow=2)
     g1<-grid.arrange(gp1,gp23,widths=c(2,2),bottom=textGrob("P-value <0.001 *** P-value <0.01 ** P-value <0.05 * ns-non-significant",gp = gpar(fontface = 3, fontsize = 9)))
-    
+
     plotlist<-list.append(plotlist,g1)
     g1<-list()
     tstatstart=tstatend+1
@@ -1161,17 +1161,17 @@ traitstats.rbdsummary<-function(Treatment,Replication,DataFile)
     pageend= pageend +2
   }
   dev.off()
-  
+
   TT1<-grid.text("R:TraitStats Package",gp=gpar(fontsize=40,col="Dark Green"))
   TT2<-grid.text("RCBD Data Analysis Report",gp=gpar(fontsize=30,col="Blue"))
   TT3<-grid.text("Abbreviation:\n ANOVA: Rep-Number of Replication; Trt-Number of Treatment; MStrt-Mean Sum of Squares of Treatment;\n MSrep-Mean Sum of Squares of Replication; MSerror-Mean Sum of Squares of Error.\n DESCRIPTIVE STATISTICS: Trait Mean-Grand Mean of the Trait; Min-Minimum Value; Max-Maximum Value;\n SE(m)-Standard Error of Mean; CV-Coefficient of Variation (%); CD-Critical Difference at 95%.\n GENETIC PARAMETER: GCV-Genotypic Coefficient of variation(%);PCV-Phenotypic Coefficient of variation(%)\n h2-Broad-sense heritability; GA-Genetic Advance; GAM-Genetic Advance percent Mean.",gp=gpar(fontsize=9,col="Black"))
-  TT4<-grid.text("Citation:\nNitesh, S.D., Parashuram Patroti and Shilpa Parashuram. (2020).\n TraitStats:Analysis of RCBD design for Descriptive statistics, ANOVA, \nGenetic parameter, Correlation, and Covariance. R package version 1.0.0",gp=gpar(fontsize=9,col="Black"))
-  
+  TT4<-grid.text("Citation:\nNitesh, S.D., Parashuram Patroti and Shilpa Parashuram. (2020).\n TraitStats:Statistical Data Analysis for Randomized Block Design Experiments. R package version 1.0.0",gp=gpar(fontsize=9,col="Black"))
+
   frontpage<-'fpage.pdf'
   pdf(frontpage)
   do.call(grid.arrange, list(TT1,TT2,TT3,TT4,nrow=4,ncol=1))
   dev.off()
-  
+
   pdf_combine(c(frontpage, pdfname), output = "TraitStatsRCBD.pdf")
   unlink(frontpage)
   file.remove(pdfname)
