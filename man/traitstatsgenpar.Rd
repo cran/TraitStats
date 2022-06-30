@@ -18,23 +18,23 @@ traitstats.genpar(Treatment, Replication, DataFile)
 \code{traitstats.genpar} performs genetic parameter analysis from the input values extracted from the ANOVA analysis for individual traits and computes several variability estimates. .
 
 The phenotypic, genotypic and environmental variance
-(\ifelse{html}{\out{<i>&sigma;<sup>2</sup><sub>p</sub></i>}}{\eqn{\sigma^{2}_{p}}},
-\ifelse{html}{\out{<i>&sigma;<sup>2</sup><sub>g</sub></i>}}{\eqn{\sigma^{2}_{g}}}
+(\ifelse{html}{\out{<i>&sigma;<sup>2</sup> p </i>}}{\eqn{\sigma^{2}_{p}}},
+\ifelse{html}{\out{<i>&sigma;<sup>2</sup> g </i>}}{\eqn{\sigma^{2}_{g}}}
 and
-\ifelse{html}{\out{<i>&sigma;<sup>2</sup><sub>e</sub></i>}}{\eqn{\sigma^{2}_{e}}}
+\ifelse{html}{\out{<i>&sigma;<sup>2</sup> e </i>}}{\eqn{\sigma^{2}_{e}}}
 ) are obtained from the ANOVA tables according to the expected value of mean
 square described by Federer and Searle (1976) as follows:
 
 \ifelse{html}{\out{<p style="text-align:
-center;"><em>&sigma;<sup>2</sup><sub>p</sub></em> = Mean sum of squares of
+center;">&sigma;<sup>2</sup> p  = Mean sum of squares of
 test treatments</p>}}{\deqn{\sigma^{2}_{p} = \textrm{Mean sum of squares of
 test treatments}}} \ifelse{html}{\out{<p style="text-align:
-center;"><em>&sigma;<sup>2</sup><sub>e</sub></em> = Mean sum of squares of
+center;"> &sigma;<sup>2</sup> e   = Mean sum of squares of
 residuals</p>}}{\deqn{\sigma^{2}_{e} = \textrm{Mean sum of squares of
 residuals}}} \ifelse{html}{\out{<p style="text-align:
-center;"><em>&sigma;<sup>2</sup><sub>g</sub></em> =
-<em>&sigma;<sup>2</sup><sub>p</sub></em> &minus;
-<em>&sigma;<sup>2</sup><sub>e</sub></em></p>}}{\deqn{\sigma^{2}_{g} =
+center;">&sigma;<sup>2</sup> g  =
+&sigma;<sup>2</sup> p  &minus;
+&sigma;<sup>2</sup> e </p>}}{\deqn{\sigma^{2}_{g} =
 \sigma^{2}_{p} - \sigma^{2}_{e}}}
 
 Phenotypic and genotypic coefficients of variation
@@ -42,13 +42,13 @@ Phenotypic and genotypic coefficients of variation
 \ifelse{html}{\out{<i>GCV</i>}}{\eqn{GCV}}) are estimated according to Burton
 (1951, 1952) as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>PCV =
-<big>[</big><sup>&sigma;<sup>2</sup><sub>p</sub></sup> &frasl; <sub>&radic;
-(<span style="text-decoration:overline">x</span>)</sub><big>]</big></em>
+\ifelse{html}{\out{<p style="text-align: center;">PCV =
+ [ <sup>&sigma;<sup>2</sup> p </sup> &frasl;  &radic;
+(<span style="text-decoration:overline">x</span>)  ]
 &times; 100</p>}}{\deqn{PCV = \frac{\sigma^{2}_{p}}{\sqrt{\overline{x}}}
-\times 100}} \ifelse{html}{\out{<p style="text-align: center;"><em>GCV =
-<big>[</big><sup>&sigma;<sup>2</sup><sub>g</sub></sup> &frasl; <sub>&radic;
-(<span style="text-decoration:overline">x</span>)</sub><big>]</big></em>
+\times 100}} \ifelse{html}{\out{<p style="text-align: center;"> GCV =
+ [ <sup>&sigma;<sup>2</sup> g </sup> &frasl;  &radic;
+(<span style="text-decoration:overline">x</span>)  ]
 &times; 100</p>}}{\deqn{GCV = \frac{\sigma^{2}_{g}}{\sqrt{\overline{x}}}
 \times 100}}
 
@@ -68,9 +68,9 @@ The broad-sense heritability
 (\ifelse{html}{\out{<i>H<sup>2</sup></i>}}{\eqn{H^{2}}}) is calculated
 according to method of Lush (1940) as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>H<sup>2</sup> =
-<sup>&sigma;<sup>2</sup><sub>g</sub></sup> &frasl;
-<sub>&sigma;<sup>2</sup><sub>p</sub></sub></em></p>}}{\deqn{H^{2} =
+\ifelse{html}{\out{<p style="text-align: center;"> H<sup>2</sup> =
+<sup>&sigma;<sup>2</sup> g </sup> &frasl;
+ &sigma;<sup>2</sup> p   </p>}}{\deqn{H^{2} =
 \frac{\sigma^{2}_{g}}{\sigma^{2}_{p}}}}
 
 The estimates of broad-sense heritability
@@ -85,9 +85,9 @@ according to Robinson (1966) as follows:
 Genetic advance (\ifelse{html}{\out{<i>GA</i>}}{\eqn{GA}}) is estimated
 and categorised according to Johnson et al., (1955) as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>GA = k &times;
-&sigma;<sub>g</sub> &times; <big>[</big><sup>H<sup>2</sup></sup> &frasl;
-</sub>100</sub><big>]</big></em></p>}}{\deqn{GA = k \times \sigma_{g} \times
+\ifelse{html}{\out{<p style="text-align: center;"> GA = k &times;
+&sigma; g  &times;  [ <sup>H<sup>2</sup></sup> &frasl;
+ 100  ]  </p>}}{\deqn{GA = k \times \sigma_{g} \times
 \frac{H^{2}}{100}}}
 
 Where the constant \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the standardized

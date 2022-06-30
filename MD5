@@ -1,4 +1,4 @@
-6f8258bf1a40828350e82adc82782973 *DESCRIPTION
+8f5ddfefb802734e8d6a94355aece74b *DESCRIPTION
 802494cc2667e942161c3a9d2d86617a *NAMESPACE
 4e55111f6ccf103d10f9927f8ca2dde2 *R/traitstats.envcorl.r
 d47142b77eee07748a6275a755a00c17 *R/traitstats.envcov.r
@@ -17,7 +17,7 @@ eed9755fe085abdc162b4ee277a66f5d *R/traitstats.rbdstats.r
 6df121fb87d8609bb68b34dd94abcc26 *man/traitstatsenvcov.Rd
 5628e1555e6aeef5f9b38772a8c6c8ae *man/traitstatsgenocorl.Rd
 86d69183720542dd85a3b56832ed44d0 *man/traitstatsgenocov.Rd
-3e05e94e72787098308c1313030bf785 *man/traitstatsgenpar.Rd
+4a3d9f3f2be56a1944af2dc93395e384 *man/traitstatsgenpar.Rd
 2a4c6c2b53258fd1a02d6cfc1976bff4 *man/traitstatsphenocorl.Rd
 a4cbb20546808c890a021b5d57fe6dd6 *man/traitstatsphenocov.Rd
 ccacd2d67645d7720abdb94105550b27 *man/traitstatsrbd.Rd
